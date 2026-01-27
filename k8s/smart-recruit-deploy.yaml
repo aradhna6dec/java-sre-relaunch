@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-recruit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smart-recruit
+  template:
+    metadata:
+      labels:
+        app: smart-recruit
+    spec:
+      containers:
+      - name: smart-recruit-app
+        image: smart-recruit:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: smart-recruit-service
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: smart-recruit
