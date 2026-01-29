@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: smart-recruit-app
-        image: smart-recruit:latest
-        imagePullPolicy: Never
+        image: aradhana6dec/smart-recruit:latest
+        imagePullPolicy: Always
         # resources section hata diya gaya hai
         ports:
         - containerPort: 8080
