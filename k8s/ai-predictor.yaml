@@ -15,7 +15,7 @@ spec:
       containers:
       - name: ai-service
         image: ai-predictor:latest
-        imagePullPolicy: Never
+        imagePullPolicy: Never # Yeh line sabse zaroori hai
         env:
         - name: KAFKA_SERVER
           value: "kafka-service:9092"

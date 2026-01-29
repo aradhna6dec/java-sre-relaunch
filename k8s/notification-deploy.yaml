@@ -16,6 +16,13 @@ spec:
       - name: notification-service
         image: notification-service:latest
         imagePullPolicy: Never
+        resources:
+          requests:
+            memory: "180Mi"
+            cpu: "100m"
+          limits:
+            memory: "300Mi"
+            cpu: "300m"
         env:
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "kafka-service:9092"
